@@ -6,7 +6,7 @@ translate_client = translate.Client()
 
 translated_dataset = {}
 
-with open("BRM-emot-submit.csv") as input_file:
+with open("data/BRM-emot-submit.csv") as input_file:
     with open("translated_data.json", "w+") as output_file:
         reader = csv.DictReader(input_file, delimiter=",")
 
