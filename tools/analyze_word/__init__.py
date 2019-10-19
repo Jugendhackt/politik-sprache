@@ -24,7 +24,6 @@ def analyze_words(statements):
             word = word.replace("!", "")
             word = word.replace("?", "")
             word = nlp(word)[0].lemma_
-            # print(word)
 
             i = find_index(parties[party][year], "word", word)
             if i == None:
