@@ -20,5 +20,4 @@ Max
 
 ## Was haben wir schon?
 
-
   Daten (Wahl-O-Mat)
