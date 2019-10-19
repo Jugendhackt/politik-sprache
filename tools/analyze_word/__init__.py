@@ -1,6 +1,8 @@
 import operator
 from ..read_data import find_index
-from nltk.stem import WordNetLemmatizer
+import spacy
+
+nlp = spacy.load("de")
 
 lemmatizer = WordNetLemmatizer() 
 
@@ -22,6 +24,7 @@ def analyze_words(statements):
             word = word.replace(".", "")
             word = word.replace("!", "")
             word = word.replace("?", "")
+            word = nlp(word)[0].lemma_
 
             i = find_index(parties[party][year], "word", word)
             if i == None:
