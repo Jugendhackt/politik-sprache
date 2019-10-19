@@ -32,6 +32,7 @@ def parse_data(base):
 
     for opinion in opinions:
       party = find(parties, "id", opinion["party"])
+      party = normalize_party(party)
       statement = find(statements, "id", opinion["statement"])
 
       statementInstance = {
@@ -39,7 +40,7 @@ def parse_data(base):
         "party": party["name"], 
         "party_long_name": party["longname"],
         "from_election": overview["title"],
-        "election_date": overview["date"]
+        "year": overview["date"][:4]
       }
 
       allStatements.append(statementInstance)
@@ -50,6 +51,18 @@ def write_json(path, data):
   f = open(path, "w")
   f.write(json.dumps(data))
   f.close()
+
+def normalize_party(party):
+  gruene = ["Die Grünen", "Bündnis 90/Die Grünen", "Bündnis 90/ Die Grünen", "BÜNDNIS 90/DIE GRÜNEN"]
+  cducsu = ["CDU/CSU", "CDU / CSU", "CDU und CSU", "CDU", "CSU"]
+  
+  if party["name"] in gruene:
+    party["name"] = gruene[0]
+  
+  if party["name"] in cducsu:
+    party["name"] =  cducsu[0]
+
+  return party
 
 if __name__ == "__main__":
   statements = parse_data("../data/qual-o-mat/")
