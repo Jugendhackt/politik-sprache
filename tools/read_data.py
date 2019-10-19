@@ -13,6 +13,13 @@ def find(list, key, value):
   
   return None
 
+def find_index(list, key, value):
+  for i, item in enumerate(list):
+    if item[key] == value:
+      return i
+
+  return None
+
 def parse_data(base):
   allStatements = []
   files = read_json(base + "list.json")
@@ -39,9 +46,12 @@ def parse_data(base):
 
   return allStatements
 
+def write_json(path, data):
+  f = open(path, "w")
+  f.write(json.dumps(data))
+  f.close()
+
 if __name__ == "__main__":
   statements = parse_data("../data/qual-o-mat/")
-  f = open("output.json", "w")
-  f.write(json.dumps(statements))
-  f.close()
+  write_json("output.json", statements)
 
