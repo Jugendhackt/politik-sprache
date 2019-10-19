@@ -1,6 +1,8 @@
 import operator
 from ..read_data import find_index
+from nltk.stem import WordNetLemmatizer
 
+lemmatizer = WordNetLemmatizer() 
 
 def analyze_words(statements):
     parties = {}
