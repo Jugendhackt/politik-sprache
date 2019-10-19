@@ -10,8 +10,8 @@ def find(list, key, value):
   for item in list:
     if item[key] == value:
       return item
-
-  return null
+  
+  return None
 
 def parse_data(base):
   allStatements = []
