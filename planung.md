@@ -7,7 +7,7 @@ Jannik
 Moritz
 Max
 
-## Was brauchen wir?
+## Was sind unsere Skills?
   KLIEH
   Python
   JS
@@ -18,6 +18,8 @@ Max
   "Alles" -Sebastian
   "Auch alles" -Gretha
 
-## Was haben wir schon?
+## Was brauchen wir?
+    Daten (Wahl-O-Mat)
+    Frontend (Website)
 
-  Daten (Wahl-O-Mat)
+## Was haben wir schon?
