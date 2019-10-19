@@ -8,7 +8,7 @@ google-cloud-translate==1.7.0
 googleapis-common-protos==1.6.0
 grpcio==1.24.1
 idna==2.8
-pkg-resources==0.0.0
+nltk==3.4.5
 protobuf==3.10.0
 pyasn1==0.4.7
 pyasn1-modules==0.2.7
