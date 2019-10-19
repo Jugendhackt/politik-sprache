@@ -1,8 +1,9 @@
 import csv
-from googletrans import Translator
+from google.cloud import translate
 import json
 
-translator = Translator()
+translate_client = translate.Client()
+
 translated_dataset = {}
 
 with open("BRM-emot-submit.csv") as input_file:
@@ -17,9 +18,9 @@ with open("BRM-emot-submit.csv") as input_file:
             if row["Word"] not in translated_dataset:
                 # try:
                 print(row["Word"])
-                translater_helper = translator.translate(row["Word"], dest="de")
-                print(translater_helper)
-                translated_word = translater_helper.text
+
+                translated_word = translate_client.translate(row["Word"],target_language='de')["translatedText"]
+                
                 translated_dataset[row["Word"]] = {
                     "word_german": translated_word,
                     "valence": row["V.Mean.Sum"],
