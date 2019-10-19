@@ -1,5 +1,8 @@
 import operator
 from ..read_data import find_index
+import spacy
+
+nlp = spacy.load("de")
 
 
 def analyze_words(statements):
@@ -20,6 +23,7 @@ def analyze_words(statements):
             word = word.replace(".", "")
             word = word.replace("!", "")
             word = word.replace("?", "")
+            word = nlp(word)[0].lemma_
 
             i = find_index(parties[party][year], "word", word)
             if i == None:
