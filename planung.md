@@ -21,4 +21,4 @@ Max
 ## Was haben wir schon?
 
 
-  Daten (Wahl-O-Mat)
+  Daten (Wahl-O-Mat): [qual-o-mat](https://github.com/gockelhahn/qual-o-mat-data)
