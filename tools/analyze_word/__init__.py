@@ -4,6 +4,7 @@ import spacy
 
 nlp = spacy.load("de")
 
+lemmatizer = WordNetLemmatizer() 
 
 def analyze_words(statements):
     parties = {}
