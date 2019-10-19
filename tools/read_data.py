@@ -13,11 +13,8 @@ def find(list, key, value):
 
   return null
 
-base = "../data/qual-o-mat/"
-allStatements = []
-
-
-if __name__ == "__main__":
+def parse_data(base):
+  allStatements = []
   files = read_json(base + "list.json")
 
   for file in files:
@@ -40,6 +37,11 @@ if __name__ == "__main__":
 
       allStatements.append(statementInstance)
 
+  return allStatements
+
+if __name__ == "__main__":
+  statements = parse_data("../data/qual-o-mat/")
   f = open("output.json", "w")
-  f.write(json.dumps(allStatements))
+  f.write(json.dumps(statements))
   f.close()
+
